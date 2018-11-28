@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+
+// This class was taken from GitHub here:
+// https://github.com/patrickbdev/PBImageView/blob/master/PBImageView/Classes/PBImageView.swift
 open class PBImageView: UIView {
     
     open var image: UIImage? {

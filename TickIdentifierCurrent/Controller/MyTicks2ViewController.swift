@@ -94,7 +94,6 @@ class MyTicks2ViewController: UIViewController, CardUIViewClickedDelegate {
                 
                 NSLayoutConstraint.activate([
                     riskLabel.topAnchor.constraint(equalTo: nameLabels[i].topAnchor, constant: 0),
-//                    riskLabel.trailingAnchor.constraint(equalTo: dRiskUILabel.trailingAnchor, constant: 0),
                     riskLabel.centerXAnchor.constraint(equalTo: dRiskUILabel.centerXAnchor, constant: 0)
                 ])
             }

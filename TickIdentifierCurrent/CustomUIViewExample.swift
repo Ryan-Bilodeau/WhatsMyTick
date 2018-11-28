@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+// This class was taken from here:
+// https://blog.usejournal.com/custom-uiview-in-swift-done-right-ddfe2c3080a
+// and was used to determine how to inherit from a UIView
 class CustomUIViewExample: UIView {
     lazy var addButton: UIButton = {
         let addButton = UIButton(type: .contactAdd)

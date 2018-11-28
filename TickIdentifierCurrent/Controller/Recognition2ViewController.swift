@@ -158,9 +158,6 @@ extension Recognition2ViewController {
                     self.tickCards[self.currentTickCardIndex + 1].alpha = 1
                 }) { (true) in
                     self.currentTickCardIndex += 1
-//                    self.pageIndicatorUIPageControl.currentPage = self.currentTickCardIndex
-//                    self.rankUILabel.text = "#\(self.currentTickCardIndex + 1)"
-//                    self.titleUILabel.text = "\(self.ticks[self.currentTickCardIndex].commonName)"
                     self.animating = false
                 }
             } else if currentTickCardIndex == tickCards.count - 1{
@@ -181,8 +178,6 @@ extension Recognition2ViewController {
                     self.rankUILabel.alpha = 0
                     self.helpUIButton.alpha = 0
                 }) { (true) in
-//                    self.pageIndicatorUIPageControl.currentPage += 1
-//                    self.titleUILabel.text = "No Match"
                     self.animating = false
                 }
             }
@@ -208,8 +203,6 @@ extension Recognition2ViewController {
                     self.rankUILabel.alpha = 1
                     self.helpUIButton.alpha = 1
                 }) { (true) in
-//                    self.pageIndicatorUIPageControl.currentPage -= 1
-//                    self.titleUILabel.text = "\(self.ticks[self.currentTickCardIndex].commonName)"
                     self.animating = false
                     self.noMatchUIView.isHidden = true
                 }
@@ -227,9 +220,6 @@ extension Recognition2ViewController {
                     self.tickCards[self.currentTickCardIndex - 1].alpha = 1
                 }) { (true) in
                     self.currentTickCardIndex -= 1
-//                    self.pageIndicatorUIPageControl.currentPage = self.currentTickCardIndex
-//                    self.rankUILabel.text = "#\(self.currentTickCardIndex + 1)"
-//                    self.titleUILabel.text = "\(self.ticks[self.currentTickCardIndex].commonName)"
                     self.animating = false
                 }
             }
@@ -237,221 +227,3 @@ extension Recognition2ViewController {
     }
 }
 
-
-
-////
-////  Recognition2ViewController.swift
-////  TickIdentifierCurrent
-////
-////  Created by Ryan  Bilodeau on 7/18/18.
-////  Copyright © 2018 Ryan Bilodeau. All rights reserved.
-////
-//
-//import UIKit
-//
-//class Recognition2ViewController: UIViewController, PossibleTickCardUIViewClickedDelegate {
-//    @IBOutlet weak var screenAreaUIView: UIView!
-//    @IBOutlet weak var rankUILabel: UILabel!
-//    @IBOutlet weak var titleUILabel: UILabel!
-//    @IBOutlet weak var pageIndicatorUIPageControl: UIPageControl!
-//    @IBOutlet weak var blackBackgroundUIView: UIView!
-//
-//    var ticks: [Tick]?
-//    var currentTickCardIndex: Int = 0
-//    var tickCards: [PossibleTickCardUIView]?
-//    var animating: Bool = false
-//
-//
-//    var beginningPanTouchPoint: CGPoint = CGPoint.zero
-//    var leftAnimating: Bool = false
-//    var percentComplete: CGFloat = 0.0
-//    var animation: UIViewPropertyAnimator!
-//
-//
-//    @IBAction func helpButtonClicked() {
-//        if !animating {
-//            //Segue to help view
-//        }
-//    }
-//    @IBAction func selectButtonClicked() {
-//        if !animating {
-//            //Segue to scene 1, save tick
-//        }
-//    }
-//}
-//
-////Overridden stuff and delegates
-//extension Recognition2ViewController {
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        blackBackgroundUIView.isHidden = true
-//
-//        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(onPan(sender:)))
-//        panGestureRecognizer.maximumNumberOfTouches = 1
-//        panGestureRecognizer.minimumNumberOfTouches = 1
-//        self.view.addGestureRecognizer(panGestureRecognizer)
-//
-//        if ticks != nil {
-//            tickCards = [PossibleTickCardUIView]()
-//
-//            for t in ticks! {
-//                let card = PossibleTickCardUIView(frame: CGRect.zero)
-//                card.delegate = self
-//                self.view.addSubview(card)
-//                card.setConstraintsTest(normalView: screenAreaUIView, enlargedView: self.view)
-//
-//                card.image.image = t.image
-//                card.translatesAutoresizingMaskIntoConstraints = false
-//
-//                tickCards?.append(card)
-//
-//                if tickCards!.count > 1 {
-//                    card.transform = CGAffineTransform(translationX: self.view.frame.width, y: 0)
-//                    card.alpha = 0
-//                }
-//            }
-//            titleUILabel.text = ticks![0].commonName
-//
-//            pageIndicatorUIPageControl.numberOfPages = ticks!.count
-//        }
-//    }
-//
-//    //Called when a PossibleTickCardUIView is clicked
-//    func cardClicked(card: PossibleTickCardUIView) {
-//        if card.enlarged {
-//            //Shrink
-//            animating = true
-//            blackBackgroundUIView.isHidden = true
-//
-//            card.changeConstraints()
-//            self.navigationController?.setNavigationBarHidden(false, animated: true)
-//
-//            UIView.animate(withDuration: 0.4, animations: {
-//                card.image.contentMode = .scaleAspectFill
-//                //                self.tabBarController?.tabBar.alpha = 1
-//                self.view.layoutIfNeeded()
-//            }) { (true) in
-//                card.animationComplete()
-//                self.animating = false
-//            }
-//        } else {
-//            //Enlarge
-//            blackBackgroundUIView.isHidden = false
-//
-//            card.changeConstraints()
-//            self.navigationController?.setNavigationBarHidden(true, animated: true)
-//
-//            UIView.animate(withDuration: 0.4, animations: {
-//                card.image.contentMode = .scaleAspectFit
-//                //                self.tabBarController?.tabBar.alpha = 0
-//                self.view.layoutIfNeeded()
-//            }) { (true) in
-//                card.animationComplete()
-//                self.animating = false
-//            }
-//        }
-//    }
-//
-//    @objc func onSwipeLeft() {
-//        if !tickCards![currentTickCardIndex].enlarged {
-//            if currentTickCardIndex < tickCards!.count - 1 {
-//                animating = true
-//                UIView.animate(withDuration: 0.5, animations: {
-//                    self.tickCards![self.currentTickCardIndex].transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
-//                    self.tickCards![self.currentTickCardIndex].alpha = 0
-//                    self.tickCards![self.currentTickCardIndex + 1].transform = CGAffineTransform.identity
-//                    self.tickCards![self.currentTickCardIndex + 1].alpha = 1
-//                }) { (true) in
-//                    self.currentTickCardIndex += 1
-//                    self.pageIndicatorUIPageControl.currentPage = self.currentTickCardIndex
-//                    self.rankUILabel.text = "#\(self.currentTickCardIndex + 1)"
-//                    self.titleUILabel.text = "\(self.ticks![self.currentTickCardIndex].commonName)"
-//                    self.animating = false
-//                }
-//            }
-//        }
-//    }
-//
-//    @objc func onSwipeRight() {
-//        if !tickCards![currentTickCardIndex].enlarged {
-//            if currentTickCardIndex > 0 {
-//                animating = true
-//                UIView.animate(withDuration: 0.5, animations: {
-//                    self.tickCards![self.currentTickCardIndex].transform = CGAffineTransform(translationX: self.view.frame.width, y: 0)
-//                    self.tickCards![self.currentTickCardIndex].alpha = 0
-//                    self.tickCards![self.currentTickCardIndex - 1].transform = CGAffineTransform.identity
-//                    self.tickCards![self.currentTickCardIndex - 1].alpha = 1
-//                }) { (true) in
-//                    self.currentTickCardIndex -= 1
-//                    self.pageIndicatorUIPageControl.currentPage = self.currentTickCardIndex
-//                    self.rankUILabel.text = "#\(self.currentTickCardIndex + 1)"
-//                    self.titleUILabel.text = "\(self.ticks![self.currentTickCardIndex].commonName)"
-//                    self.animating = false
-//                }
-//            }
-//        }
-//    }
-//
-//    @objc func onPan(sender: UIPanGestureRecognizer) {
-//        if sender.state == .began && !animating {
-//            if !tickCards![currentTickCardIndex].enlarged {
-//                animating = true
-//                beginningPanTouchPoint = sender.location(in: self.view)
-//
-//                if sender.velocity(in: self.view).x > 0 {
-//                    leftAnimating = false
-//                } else {
-//                    leftAnimating = true
-//                }
-//
-//                if leftAnimating && currentTickCardIndex < tickCards!.count - 1 {
-//                    animation = UIViewPropertyAnimator(duration: 1, curve: .linear, animations: {
-//                        self.tickCards![self.currentTickCardIndex].transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
-//                        self.tickCards![self.currentTickCardIndex].alpha = 0
-//                        self.tickCards![self.currentTickCardIndex + 1].transform = CGAffineTransform.identity
-//                        self.tickCards![self.currentTickCardIndex + 1].alpha = 1
-//                    })
-//                    animation.addCompletion { (position) in
-//                        if position == .end {
-//                            self.currentTickCardIndex += 1
-//                            self.pageIndicatorUIPageControl.currentPage = self.currentTickCardIndex
-//                            self.rankUILabel.text = "#\(self.currentTickCardIndex + 1)"
-//                            self.titleUILabel.text = "\(self.ticks![self.currentTickCardIndex].commonName)"
-//                            self.animating = false
-//                        }
-//                    }
-//                } else if !leftAnimating && currentTickCardIndex > 0 {
-//                    animation = UIViewPropertyAnimator(duration: 1, curve: .linear, animations: {
-//                        self.tickCards![self.currentTickCardIndex].transform = CGAffineTransform(translationX: self.view.frame.width, y: 0)
-//                        self.tickCards![self.currentTickCardIndex].alpha = 0
-//                        self.tickCards![self.currentTickCardIndex - 1].transform = CGAffineTransform.identity
-//                        self.tickCards![self.currentTickCardIndex - 1].alpha = 1
-//                    })
-//                    animation.addCompletion { (position) in
-//                        if position == .end {
-//                            self.currentTickCardIndex -= 1
-//                            self.pageIndicatorUIPageControl.currentPage = self.currentTickCardIndex
-//                            self.rankUILabel.text = "#\(self.currentTickCardIndex + 1)"
-//                            self.titleUILabel.text = "\(self.ticks![self.currentTickCardIndex].commonName)"
-//                            self.animating = false
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        if animating {
-//            if leftAnimating {
-//                percentComplete = (beginningPanTouchPoint.x - sender.location(in: self.view).x) / (self.view.frame.width / 2)
-//                print(percentComplete)
-//            } else {
-//                percentComplete = (sender.location(in: self.view).x - beginningPanTouchPoint.x) / (self.view.frame.width / 2)
-//                print(percentComplete)
-//            }
-//            animation.fractionComplete = percentComplete
-//            if animation.fractionComplete > 0.6 {
-//                animation.finishAnimation(at: .current)
-//            }
-//        }
-//    }
-//}

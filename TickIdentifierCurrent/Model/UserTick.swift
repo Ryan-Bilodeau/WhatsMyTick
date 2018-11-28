@@ -12,7 +12,7 @@ import UIKit
 class UserTick: NSObject, NSCoding {
     let image: UIImage
     let date: String
-    let state: String   //Set to an empty string is the there is no user state
+    let state: String   //Set to an empty string if there is no user state
     let tickClassString: String
     
     lazy var tickClass = {

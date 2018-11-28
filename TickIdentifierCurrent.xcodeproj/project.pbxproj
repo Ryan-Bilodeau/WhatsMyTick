@@ -10,7 +10,6 @@
 		AF0F152F211A380600E593E7 /* ImageCardUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0F152E211A380600E593E7 /* ImageCardUIView.swift */; };
 		AF3496772108F4B400370AA9 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3496762108F4B400370AA9 /* PhotoViewController.swift */; };
 		AF349679210913F400370AA9 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF349678210913F400370AA9 /* LearnViewController.swift */; };
-		AF8AFF0D210A88250074C05B /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8AFF0C210A88250074C05B /* LocationServices.swift */; };
 		AF8AFF0F210A9C990074C05B /* MyTicks1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8AFF0E210A9C990074C05B /* MyTicks1ViewController.swift */; };
 		AF8AFF11210ACD550074C05B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8AFF10210ACD550074C05B /* Extensions.swift */; };
 		AF9332902110E152004DF84F /* UserTickTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF93328F2110E152004DF84F /* UserTickTableViewCell.swift */; };
@@ -30,7 +29,6 @@
 		AFCEE7AB210FC487002EA790 /* UserTick.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCEE7AA210FC487002EA790 /* UserTick.swift */; };
 		AFCEEBC9212281ED00B21DFF /* Diseases.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCEEBC8212281ED00B21DFF /* Diseases.swift */; };
 		AFD9859A20FFF15700392D2A /* Recognition2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9859920FFF15700392D2A /* Recognition2ViewController.swift */; };
-		AFD9859C20FFF18600392D2A /* Tick.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9859B20FFF18600392D2A /* Tick.swift */; };
 		AFD9859E20FFF19B00392D2A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9859D20FFF19B00392D2A /* State.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +36,6 @@
 		AF0F152E211A380600E593E7 /* ImageCardUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCardUIView.swift; sourceTree = "<group>"; };
 		AF3496762108F4B400370AA9 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		AF349678210913F400370AA9 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
-		AF8AFF0C210A88250074C05B /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		AF8AFF0E210A9C990074C05B /* MyTicks1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTicks1ViewController.swift; sourceTree = "<group>"; };
 		AF8AFF10210ACD550074C05B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AF93328F2110E152004DF84F /* UserTickTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTickTableViewCell.swift; sourceTree = "<group>"; };
@@ -60,7 +57,6 @@
 		AFCEE7AA210FC487002EA790 /* UserTick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTick.swift; sourceTree = "<group>"; };
 		AFCEEBC8212281ED00B21DFF /* Diseases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diseases.swift; sourceTree = "<group>"; };
 		AFD9859920FFF15700392D2A /* Recognition2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recognition2ViewController.swift; sourceTree = "<group>"; };
-		AFD9859B20FFF18600392D2A /* Tick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tick.swift; sourceTree = "<group>"; };
 		AFD9859D20FFF19B00392D2A /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,13 +121,11 @@
 		AFA1794920FFE60B0058EB7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AFD9859B20FFF18600392D2A /* Tick.swift */,
 				AFAA61C021271B8C007CA257 /* AllTicks.swift */,
 				AFCEE7AA210FC487002EA790 /* UserTick.swift */,
 				AFCEEBC8212281ED00B21DFF /* Diseases.swift */,
 				AFD9859D20FFF19B00392D2A /* State.swift */,
 				AFBAC24421191A5200A1858D /* Region.swift */,
-				AF8AFF0C210A88250074C05B /* LocationServices.swift */,
 				AFBD648E210EACB700E7B30F /* PBImageView.swift */,
 				AF8AFF10210ACD550074C05B /* Extensions.swift */,
 				AFB9CB6F210BD5DA000A18A8 /* Protocols.swift */,
@@ -221,8 +215,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCEEBC9212281ED00B21DFF /* Diseases.swift in Sources */,
-				AFD9859C20FFF18600392D2A /* Tick.swift in Sources */,
-				AF8AFF0D210A88250074C05B /* LocationServices.swift in Sources */,
 				AFA1794E20FFE6B70058EB7E /* Recognition1ViewController.swift in Sources */,
 				AFBAC24521191A5200A1858D /* Region.swift in Sources */,
 				AFCEE7AB210FC487002EA790 /* UserTick.swift in Sources */,

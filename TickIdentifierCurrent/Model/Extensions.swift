@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 extension UIScrollView {
+    
+    // This function was taken from GitHub here:
+    // https://gist.github.com/TimOliver/71be0a8048af4bd86ede
     func zoom(toPoint zoomPoint : CGPoint, scale : CGFloat, animated : Bool) {
         //Ensure scale is clamped to the scroll view's allowed zooming range
         var scale = CGFloat.minimum(scale, maximumZoomScale)
@@ -58,9 +61,6 @@ extension NSMutableAttributedString {
         let range: NSRange = self.mutableString.range(of: textForAttribute, options: .caseInsensitive)
         
         // Swift 4.2 and above
-//        self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
-        
-        // Swift 4.1 and below
         self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
     }
     
