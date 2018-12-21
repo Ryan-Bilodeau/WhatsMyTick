@@ -84,7 +84,7 @@ class PossibleTickCardUIView: UIView, CardUIViewAnimationCompleteDelegate, UIScr
         centerXNonEnlargedConstraint = centerXAnchor.constraint(equalTo: normalView.centerXAnchor)
         widthNonEnlargedConstraint = widthAnchor.constraint(equalTo: normalView.widthAnchor, multiplier: 0.85)
         
-        topEnlargedConstraint = topAnchor.constraint(equalTo: enlargedView.topAnchor, constant: 20)
+        topEnlargedConstraint = topAnchor.constraint(equalTo: enlargedView.topAnchor, constant: 44)
         bottomEnlargedConstraint = bottomAnchor.constraint(equalTo: enlargedView.bottomAnchor)
         leadingEnlargedConstraint = leadingAnchor.constraint(equalTo: enlargedView.leadingAnchor)
         trailingEnlargedConstraint = trailingAnchor.constraint(equalTo: enlargedView.trailingAnchor)

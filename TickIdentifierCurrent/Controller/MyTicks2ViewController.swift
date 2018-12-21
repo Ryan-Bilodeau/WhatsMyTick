@@ -136,6 +136,7 @@ class MyTicks2ViewController: UIViewController, CardUIViewClickedDelegate {
         card1.image.image = userTick.image
         
         card2.setConstraints(normalView: photoContainerUIView, enlargedView: self.view)
+        
         card2.image.image = userTick.tickClass.image
         card2.transform = CGAffineTransform(translationX: photoContainerUIView.frame.width, y: 0)
         card2.alpha = 0

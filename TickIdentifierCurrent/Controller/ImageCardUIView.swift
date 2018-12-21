@@ -139,7 +139,7 @@ extension ImageCardUIView {
         leadingNonEnlargedConstraint = leadingAnchor.constraint(equalTo: normalView.leadingAnchor)
         trailingNonEnlargedConstraint = trailingAnchor.constraint(equalTo: normalView.trailingAnchor)
         
-        topEnlargedConstraint = topAnchor.constraint(equalTo: enlargedView.topAnchor, constant: 20)
+        topEnlargedConstraint = topAnchor.constraint(equalTo: enlargedView.topAnchor, constant: 44)
         bottomEnlargedConstraint = bottomAnchor.constraint(equalTo: enlargedView.bottomAnchor)
         leadingEnlargedConstraint = leadingAnchor.constraint(equalTo: enlargedView.leadingAnchor)
         trailingEnlargedConstraint = trailingAnchor.constraint(equalTo: enlargedView.trailingAnchor)
